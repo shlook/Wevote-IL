@@ -1,0 +1,352 @@
+/* THE MAIN Comments div 1 */
+div.wallkit_frame {
+
+
+}
+
+/* THE MAIN Comments div 2 */
+div.comment_body {
+
+
+}
+
+
+/* THE loader div */
+div.fb_content_loader {
+
+
+}
+
+/* THE loader image div */
+div.fb_content_loader_gif {
+ 
+}
+
+
+/* THE MAIN Comments form div */
+div.wallkit_form {
+ 
+
+}
+
+/* THE MAIN Comments form form */
+div.wallkit_form {
+ 
+
+}
+
+/* THE MAIN Comments form not connected div */
+div.show_not_connected {
+ 
+}
+
+/* profile pic div */
+div.profile_pic {
+ 
+}
+
+/* not connected profile pic image */
+img.not_connected {
+ 
+}
+
+/* connected profile pic image */
+img.connected {
+ 
+}
+
+/* connected user div */
+div.connected {
+ 
+}
+
+/* connected user "logged in as" text */
+div.loggedinas {
+ 
+}
+
+/* connected user "logged in as" small icon image */
+div.loggedinas img {
+ 
+}
+
+/* connected user "logged in as" user name span */
+span.namelink {
+
+}
+
+/* connected user "logged in as" user name link */
+span.namelink a {
+}
+
+/* connected user "log out" link */
+a.logout {
+
+}
+
+/* connected user admin "Administer Comments" link */
+a.editsettings {
+
+}
+
+
+
+
+
+
+/* the textarea div */
+div.text_spacer {
+ 
+}
+
+/* the textarea */
+div.text_spacer textarea {
+ 
+}
+
+/* the main connect area div */
+div.connect_area {
+ 
+}
+
+/* connect area main name and email fields div */
+div.nameemail {
+
+}
+
+/* connect area name and email fields inputs */
+div.nameemail input {
+
+}
+
+/* connect area "or" between word div */
+div.or {
+
+}
+
+/* connect button div */
+div.connect_button_text {
+
+}
+
+/* connect button link */
+div.connect_button_text a {
+
+}
+
+/* connect button image */
+img.connect_button {
+ 
+}
+
+/* connect button text div (Log in to Facebook to post your comment) */
+div.hint_text {
+
+}
+
+/* captcha main div 1 */
+div.wall_captcha {}
+/* captcha main div 2 */
+div.captcha {}
+
+/* captcha top text - "Security Check" */
+div.captcha h3 {
+
+}
+
+/* captcha top text hr */
+div.divider {
+
+}
+
+/* captcha main text,options and image div (above the form) */
+div.captcha_challenge {
+
+}
+
+/* captcha main text and options div (above the form) */
+div.recaptcha_text {
+
+}
+
+/* captcha only if image text and options div (above the form) */
+div.recaptcha_only_if_image {
+
+}
+
+/* captcha only if image text and options links (above the form) */
+div.recaptcha_only_if_image a {
+
+}
+
+/* captcha only if audio text and options div (above the form) */
+div.recaptcha_only_if_audio {
+
+}
+
+/* captcha image div */
+div.recaptcha_image {
+
+}
+
+/* captcha image image */
+div.recaptcha_image img {
+
+}
+
+/* captcha main form (below the image) */
+div.captcha_input {
+
+}
+
+/* captcha form label (Text in the box:) */
+div.captcha_input label {
+
+}
+
+/* captcha form input div */
+div.field_container {
+
+}
+
+/* captcha form input */
+div.field_container input {
+
+}
+
+/* captcha form submit button div */
+div.post_area {
+
+}
+
+/* captcha form submit button */
+div.post_area input {
+
+}
+
+/* captcha form submit button */
+input.inputsubmit {
+
+}
+
+
+
+
+
+
+/* THE MAIN Comments posts div */
+div.wallkit_posts {
+ 
+}
+
+/* main comment post div (with the default values) */
+div.wallkit_post {
+ 
+border-bottom:1px solid #D8DFEA;
+margin:10px 10px 5px 0;
+padding-bottom:5px;
+}
+
+/* comment profile pic div */
+div.wallkit_profilepic {
+ 
+}
+
+/* comment profile pic user link (facebook users only) */
+div.wallkit_profilepic a {
+ 
+}
+
+/* comment profile pic image */
+div.wallkit_profilepic img {
+ 
+}
+
+/* comment content div */
+div.wallkit_postcontent {
+ 
+}
+
+/* comment top content name and date h4 */
+div.wallkit_postcontent h4 {
+ 
+}
+
+/* comment top content name user link (facebook users only) */
+div.wallkit_postcontent h4 a {
+ 
+}
+
+/* comment top content anonymous name */
+div.wallkit_postcontent h4 span {
+ 
+}
+
+/* comment top content date */
+span.wall_time {
+ 
+}
+
+/* comment content text */
+div.wallkit_postcontent div {
+direction: rtl;
+text-align: right; 
+}
+
+/* comment bottom content actions links div (Message, Delete, Block) */
+div.wallkit_actionset {
+ 
+}
+
+/* comment bottom content actions Message link */
+div.wallkit_actionset a.message {}
+
+/* comment bottom content actions Delete link */
+div.wallkit_actionset a.delete {}
+
+/* comment bottom content actions Block link */
+div.wallkit_actionset a.block {}
+
+
+
+
+
+
+/* THE MAIN Comments bottom count and paging div */
+div.wallkit_subtitle {
+
+}
+
+/* Comments bottom count div */
+div.subtitle_left {
+
+}
+
+/* Comments bottom paging div */
+div.pager {
+ 
+}
+
+/* Comments bottom paging ul */
+ul.pagerpro {
+ 
+}
+
+/* Comments bottom paging li */
+li.pagerpro_li {
+ 
+}
+
+/* Comments bottom paging current li */
+li.current {
+ 
+}
+
+/* Comments bottom paging li link */
+a.pagerpro_a {
+ 
+}
+
+div.like {
+    display:none;
+}

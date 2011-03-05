@@ -1,0 +1,318 @@
+BODY {font-family:arial;background:white;direction:rtl;}
+.voteNum{color:blue;font-size:14px}
+.voteDate{color:brown;font-size:14px}
+.voteBody{color:#6B6B6B;font-size:15px}
+.voteNotVote{color:red;font-size:12px}
+.linksTopMain a {color:black;font-size:16px;text-decoration:none;color:#5972A8;font-weight:bold}
+.linksTopUser a {color:blue;font-size:14px;text-decoration:none}
+.ballotName{color:#330066;display:inline}
+.ballotNumber{color:blue;font-size:14px;display:inline}
+.chooseLink{font-size:16px;color:#CC0000}
+.voteChose{font-size:14px;color:#660099}
+.optionHeader{color:#5972A8;font-size:14px;font-weight:bold}
+.vote_title{font-size:17px;color:#000033}
+.resultsHeader{font-size:15px;color:#660066}
+.countBallot{color:#330000;font-size:14px}
+.ballotMembersCount{color:#000066;font-size:14px}
+.movilHeader{color:#000066;font-size:14px}
+.setMovil{color:red;font-size:12px}
+.muvalim{color:#000066;font-size:14px}
+.voteCaption{color:#5972A8;font-size:12px;font-weight:bold}
+.voteData{font-size:14px;color:black}
+.memberName{font-size:14px;color:black;font-weight:bold}
+#VoteName {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 1.5em;
+letter-spacing : 1px;
+
+padding-bottom : 3px;
+color : #344C7F;
+line-height:100%;
+text-align : right;
+border-color : black;
+border-width : 0 0 1px 0;
+border-style : dashed;
+}
+
+#VoteContent {
+
+width : 60%;
+margin-top : 20px;
+margin-right : 10px;
+float : right;
+}
+
+#VoteResultContent {
+
+width : auto;
+margin-top : 30px;
+float: left;
+
+}
+
+#VoteStatus {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 12px;
+letter-spacing : 2px;
+
+margin-bottom : 10px;
+color : #47494C;
+text-align : right;
+border-style : solid;
+border-width : 0 0 1px 0;
+border-color : black;
+}
+
+#FooterText {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 10px;
+letter-spacing : 2px;
+margin-bottom : 10px;
+color : #47494C;
+text-align : center;
+}
+
+
+#MemberStatus {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 12px;
+letter-spacing : 2px;
+
+margin-bottom : 10px;
+color : #47494C;
+text-align : right;
+border-style : solid;
+border-width : 0 0 0 0;
+border-color : black;
+}
+
+
+#voteBody {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+text-align : justify;
+width : 100%;
+line-height : 120%;
+font-size : 1.05em;
+margin-bottom: 10px;
+padding-bottom : 20px;
+min-height:300px;
+margin-left: 50px;
+color : black;
+border-style : solid;
+border-width : 0 0 1px 0;
+border-color : black;
+}
+
+#operation {
+margin-bottom : 100px;
+}
+
+#operation p {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 0;
+    font-family: sans-serif;
+    font-size: 0.95em;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    padding: 0 2px 1px 90px;
+    width: 500px;
+	color : #47494C;
+}
+#viewOption a {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 0 1px 0 1px;
+    font-family: sans-serif;
+    font-size: 0.95em;
+    padding: 0 8px 0 8px;
+	margin: 0 0 0 10px;
+	color : #47494C;
+}
+
+#navBar {
+	width : 1000px;
+	height: 55px;
+
+	border-color: #344C7F;
+	border-width: 0px 0 1px 0;
+	border-style: solid;
+	
+}
+
+#navBar a {
+	margin-left : 30px;
+	font-weight:bold;
+}
+
+#navBar img {
+	margin-left : 10px;
+}
+
+#login {
+float : left;
+}
+
+#MemberOption  {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-family: sans-serif;
+    font-size: 1em;
+	margin: 0 0 0 10px;
+	color : #47494C;
+	width : 200px;
+	padding : 1px;
+}
+#voteOptionStatus  {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-family: sans-serif;
+    font-size: 0.8em;
+	margin: 0 0 0 10px;
+	color : #47494C;
+	width : 200px;
+	padding : 1px;
+}
+
+#voteOptionStatusVoted  {
+    background-color: #BEC3CC;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-family: sans-serif;
+    font-size: 0.8em;
+	margin: 0 0 0 10px;
+	color : #47494C;
+	width : 200px;
+	padding : 1px;
+}
+
+
+#message  {
+    background-color: #FFCCD9;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+	color : #47494C;
+	width : 300px;
+	float : left;
+}
+
+#voteResultContent h4  {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 0px 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+	color : #47494C;
+	width : 100%;
+}
+
+#voteResultContent p{
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 1em;
+letter-spacing : 2px;
+padding-right:0;
+padding-bottom : 3px;
+margin-bottom : 2px;
+color : #344C7F;
+
+}
+
+#voteContent h4  {
+    background-color: #EEF3FF;
+    border-color: #344C7F;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    font-family: sans-serif;
+    font-size: 0.9em;
+	color : #47494C;
+	width : 100%;
+}
+
+#voteBottom {
+clear: both ;
+margin-top : 50px;
+}
+
+
+#voteLink a {
+font-style:italic;
+}
+
+
+a:link { 
+
+	text-decoration: none; 
+	color: #344C7F;
+	}
+a:visited { 
+
+	text-decoration: none; 
+	color: #344C7F;
+	}
+a:hover, a:active { 
+	color: #A2BFFF;
+	}
+	
+	
+h2 {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 1.5em;
+letter-spacing : 1px;
+width : 350px;
+padding-right:0;
+padding-bottom : 3px;
+margin-bottom : 20px;
+color : #344C7F;
+line-height:100%;
+text-align : right;
+border-color : black;
+border-width : 0 0 1px 0;
+border-style : dashed;
+}
+
+h5{
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 1.05em;
+letter-spacing : 1px;
+padding-right:0;
+padding-bottom : 3px;
+margin-bottom : 20px;
+color : #344C7F;
+line-height:100%;
+text-align : right;
+border-color : black;
+border-width : 0 0 1px 0;
+border-style : dashed;
+}
+
+#voteContent p{
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 1em;
+letter-spacing : 2px;
+padding-right:0;
+padding-bottom : 3px;
+margin-bottom : 2px;
+color : #344C7F;
+
+}
+
+img {
+border-width : 0;
+}
+
+#content {
+  width: 1000px ;
+  margin-right: auto ;
+  margin-left: auto;
+}

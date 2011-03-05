@@ -1,0 +1,15 @@
+* Re write facebook stuff - 8 hours - Done, Waiting for Tal response
+
+* Re write some of the code  - 5 hours
+
+* Fix CSS problem  - 3 hours
+* Upload the code to some code sharing place (What to do with the password ? Just fake? ) - 2 hours
+* Fix timezone problem - 2 hours
+=====
+
+* Make rss for David - 2 hours
+* Let anyone add votes to some vote place, then vote for votes, one vote per week. - 8 hours
+
+
+
+
