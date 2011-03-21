@@ -1,25 +1,44 @@
-BODY {font-family:arial;background:white;direction:rtl;}
-.voteNum{color:blue;font-size:14px}
-.voteDate{color:brown;font-size:14px}
-.voteBody{color:#6B6B6B;font-size:15px}
-.voteNotVote{color:red;font-size:12px}
-.linksTopMain a {color:black;font-size:16px;text-decoration:none;color:#5972A8;font-weight:bold}
-.linksTopUser a {color:blue;font-size:14px;text-decoration:none}
-.ballotName{color:#330066;display:inline}
-.ballotNumber{color:blue;font-size:14px;display:inline}
-.chooseLink{font-size:16px;color:#CC0000}
-.voteChose{font-size:14px;color:#660099}
-.optionHeader{color:#5972A8;font-size:14px;font-weight:bold}
-.vote_title{font-size:17px;color:#000033}
-.resultsHeader{font-size:15px;color:#660066}
-.countBallot{color:#330000;font-size:14px}
-.ballotMembersCount{color:#000066;font-size:14px}
-.movilHeader{color:#000066;font-size:14px}
-.setMovil{color:red;font-size:12px}
-.muvalim{color:#000066;font-size:14px}
-.voteCaption{color:#5972A8;font-size:12px;font-weight:bold}
-.voteData{font-size:14px;color:black}
-.memberName{font-size:14px;color:black;font-weight:bold}
+BODY {font-family:arial;background:white;direction:rtl;text-align: center}
+
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	text-align: right;
+}
+
+
+#navBar {
+	border-color: #344C7F;
+	border-width: 0px 0 1px 0;
+	border-style: solid;
+	padding-bottom : 10px;
+	height: 50px;
+}
+
+#menubar{
+	width:780px;
+	float:right;
+}
+
+#navBar a {
+	margin-left : 30px;
+	font-weight:bold;
+}
+
+#navBar img {
+	margin-left : 10px;
+}
+
+#login {
+float:left;
+width:220px;
+text-align:left;
+}
+
+
+
 #VoteName {
 font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
 font-size : 1.5em;
@@ -44,7 +63,7 @@ float : right;
 
 #VoteResultContent {
 
-width : auto;
+width : 30%;
 margin-top : 30px;
 float: left;
 
@@ -63,6 +82,12 @@ border-width : 0 0 1px 0;
 border-color : black;
 }
 
+#LoginStatus {
+font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
+font-size : 9px;
+letter-spacing : 2px;
+color : #47494C;
+}
 #FooterText {
 font-family : Verdana,Geneva,'Bitstream Vera Sans','DejaVu Sans',sans-serif;
 font-size : 10px;
@@ -95,8 +120,9 @@ line-height : 120%;
 font-size : 1.05em;
 margin-bottom: 10px;
 padding-bottom : 20px;
-min-height:300px;
-margin-left: 50px;
+min-height:350px;
+height:auto !important;
+height:350px;
 color : black;
 border-style : solid;
 border-width : 0 0 1px 0;
@@ -128,32 +154,10 @@ margin-bottom : 100px;
     font-family: sans-serif;
     font-size: 0.95em;
     padding: 0 8px 0 8px;
-	margin: 0 0 0 10px;
+	margin: 0 0 0 0;
 	color : #47494C;
 }
 
-#navBar {
-	width : 1000px;
-	height: 55px;
-
-	border-color: #344C7F;
-	border-width: 0px 0 1px 0;
-	border-style: solid;
-	
-}
-
-#navBar a {
-	margin-left : 30px;
-	font-weight:bold;
-}
-
-#navBar img {
-	margin-left : 10px;
-}
-
-#login {
-float : left;
-}
 
 #MemberOption  {
     background-color: #EEF3FF;
@@ -214,7 +218,6 @@ float : left;
     font-family: sans-serif;
     font-size: 0.9em;
 	color : #47494C;
-	width : 100%;
 }
 
 #voteResultContent p{
@@ -307,12 +310,29 @@ color : #344C7F;
 
 }
 
+#vote_table {
+direction:ltr;
+}
+
 img {
 border-width : 0;
 }
 
-#content {
-  width: 1000px ;
-  margin-right: auto ;
-  margin-left: auto;
+/* simple css-based tooltip */
+.tooltip {
+	background-color:#000;
+	border:1px solid #fff;
+	padding:10px 15px;
+	width:200px;
+	display:none;
+	color:#fff;
+	text-align:right;
+	font-size:13px;
+
+	/* outline radius for mozilla/firefox only */
+	-moz-box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
 }
+
+
+

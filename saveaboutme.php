@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
 
 $aboutMe = gp("value", 2, true);

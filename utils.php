@@ -5,12 +5,11 @@ define("V_OK", 1);
 define("V_FAILED", 2); 
 $ONLOAD_STR = "";
 $JS_STR = "";
-
+$currentVersion = "0.12";
 $currentEnv = "prod";
-
 function getCurrentPageURL() {
  $pageURL = 'http';
- if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ //if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
  $pageURL .= "://";
  if ($_SERVER["SERVER_PORT"] != "80") {
   $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
@@ -18,6 +17,16 @@ function getCurrentPageURL() {
   $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
  }
  return $pageURL;
+}
+
+function addUrlParam($url, $param) {
+
+	if (strrpos($url, '?')) {
+		return $url . '&' . $param;
+	} else {
+		return $url . '?' . $param;
+	}
+
 }
 
 

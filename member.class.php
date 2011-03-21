@@ -24,7 +24,7 @@ class Member
 			$this->isAdmin = $line->is_admin;
 		}
 		else
-			die("Not Found!"); 
+			die("Can't find member"); 
 	}
 	
 	function getOptionIdVoted($voteId) {

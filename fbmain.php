@@ -1,14 +1,20 @@
 <?php
-    $fbconfig["prod"]['appid' ]  = "172277482794601";
+   
+	$fbconfig["prod"]['appid' ]  = "172277482794601";
     $fbconfig["prod"]['api'   ]  = "00869a9afb5e28de86f006d4c9707c09";
     $fbconfig["prod"]['secret']  = "6ddd5057c79a497bb97ddaadaeec6155";
 	
-	$fbconfig["dev"]['appid' ]  = "172277482794601";
-    $fbconfig["dev"]['api'   ]  = "00869a9afb5e28de86f006d4c9707c09";
-    $fbconfig["dev"]['secret']  = "6ddd5057c79a497bb97ddaadaeec6155";
+	$fbconfig["dev"]['appid' ]  = "210500612298547";
+    $fbconfig["dev"]['api'   ]  = "afb3cfa03b7575e7c39b0a0e305c09bb";
+    $fbconfig["dev"]['secret']  = "54597957cffd9d50d97b58e26d10e120";
 	
-	$isDebug = 0;
-    try{
+	if ($currentEnv == "dev") {
+		$isDebug = 0;
+	} else {
+		$isDebug = 0;
+	}
+   
+   try{
         include_once "./facebook/src/facebook.php";
     }
     catch(Exception $e){

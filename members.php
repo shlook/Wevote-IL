@@ -1,5 +1,5 @@
 <? 
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
 
 $ONLOAD_STR = "";
@@ -7,12 +7,11 @@ $TITLE_STR = "חברים";
 $p_show_option = gp("m");
 
 
-include("header.php");
+include_once("header.php");
 
 
 ?>
 
-<TABLE >
 
 <h2>חברי המפלגה</h2>
 
@@ -20,11 +19,11 @@ include("header.php");
 <?php
 	if ($p_show_option == 1) {
 ?>
-		<a href="members.php?m=2">כולם</a> <a href="members.php?m=1"> <b>רק מובילי דעה</b></a> 
+		<a href="members.php?m=2">כולם</a>  <a href="members.php?m=1"> <b>רק מובילי דעה</b></a> 
 <?php
 	} else {
 ?>
-		<a href="members.php?m=2"><b>כולם</b></a> <a href="members.php?m=1"> רק מובילי דעה</a> 
+		<a href="members.php?m=2"><b>כולם</b></a>  <a href="members.php?m=1"> רק מובילי דעה</a> 
 <?php
 	}
 
@@ -34,11 +33,13 @@ include("header.php");
 
 </div>
 <hr>
+<TABLE>
+
 <?php
 if ($p_show_option == 1) {
-	$allMembersQuery = "select member_id, name, fb_uid from member where is_movil = 1";	
+	$allMembersQuery = "select member_id, name, fb_uid from member where is_movil = 1 order by rand()";	
 } else {
-	$allMembersQuery = "select member_id, name, fb_uid from member";	
+	$allMembersQuery = "select member_id, name, fb_uid from member order by rand()";	
 }
 
 $allMembersResult = $db->query($allMembersQuery);

@@ -1,10 +1,9 @@
 <?
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
-include("vote/vote.class.php");
-$TITLE_STR = "עמוד ראשי";
-include("header.php");
-
+include_once("vote/vote.class.php");
+$TITLE_STR = "המפלגה הישירה - מכניסה אותך לכנסת";
+include_once("header.php");
 $i = 0;
 
 # Get latest members
@@ -89,6 +88,7 @@ while ($rec = $db->fetchNextObject($result)) {
 	}
 }
 ?>
+
 <h2>מן הנעשה באתר...</h2>
 <div id="operation">
 <?php
@@ -99,6 +99,8 @@ foreach ($timeline as $key => $val) {
 
 ?>
 </div>
+
+
 
 
 <? include("footer.php")?>

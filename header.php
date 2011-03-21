@@ -5,19 +5,15 @@ if ($currentEnv == "dev") {
 	error_reporting(E_ALL);
 }
 
-include("secure/login.class.php");
+include_once("secure/login.class.php");
 include_once("member.class.php");
-require 'facebook/src/facebook.php';
+include_once 'facebook/src/facebook.php';
 include_once "fbmain.php";
 
 
-if (preg_match("/MSIE/i", $_SERVER['HTTP_USER_AGENT'])) {
-	
-}
-
 # Set Facebook properties
 $config["prod"]['baseurl']  =   getCurrentPageURL();
-$config["dev"]['baseurl']  =   "http://localhost/wevote/dev/main.php";
+$config["dev"]['baseurl']  =   getCurrentPageURL();
 
 if ($me) {
   $logoutUrl = $facebook->getLogoutUrl(
@@ -29,15 +25,15 @@ if ($me) {
   $loginUrl = $facebook->getLoginUrl(
 	array(
 		'display'   => 'popup',
-		'next'      => $config[$currentEnv]['baseurl'] . '?loginsucc=1',
-		'cancel_url'=> $config[$currentEnv]['baseurl'] . '?cancel=1',
+		'next'      => addUrlParam($config[$currentEnv]['baseurl'], 'loginsucc=1'),
+		'cancel_url'=> addUrlParam($config[$currentEnv]['baseurl'], 'fbcancel=1'),
 		'req_perms' => 'email,user_birthday',
 	)
   );
 }
  
 // if user click cancel in the popup window
-if (isset($_REQUEST['cancel'])){
+if (isset($_REQUEST['fbcancel'])){
 	echo "<script>
 		window.close();
 		</script>";
@@ -74,11 +70,12 @@ if ($me && isset($_REQUEST['loginsucc'])){
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
   <title><?=$TITLE_STR?></title>  
   <link rel="stylesheet" type="text/css" href="style/main.css">
+  <link REL="SHORTCUT ICON" HREF="images/miflagaicon.bmp">
  </head>
  <body>
     <script type="text/javascript">
         <?php
-		if ($loginUrl) { 
+		if (isset($loginUrl) && ($loginUrl)) { 
 		?>
 			var newwindow;
 			var intId;
@@ -110,7 +107,8 @@ if ($me && isset($_REQUEST['loginsucc'])){
     </script>
 	 <div id="content">
 		 <div id="navBar">
-			<img src="images/logo.png" width=120 height=20>				
+		 <div id="menubar">
+			<a href="about.php"><img src="images/logo.png" align="center" border="0">אודות</a>				
 			<a href="main.php"><img src="images/main.png" width="45" align="center" border="0">ראשי</a>
 			<a href="votes.php"><img src="images/ballot.jpg" width="45" align="center" border="0">הצבעות</a>
 			<a href="members.php"><img src="images/member.png" width="45" align="center" border="0">חברי המפלגה</a>
@@ -120,19 +118,21 @@ if ($me && isset($_REQUEST['loginsucc'])){
 			<?php
 			}
 			?>
-
-		<span id="login">
+		</div>
+		<div id="login">
 			<?php
 			if ($me) { 
 			?>
+				<div id="LoginStatus">מחובר כ-<b><?=$me['name']?></b></div>
 				<a href="<?=$logoutUrl?>">
-					<img src="http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif" border="0">
+					<img src="images/fb_disconnect_heb.png" border="0">
 				</a>
 			<?php 
 			} else { 
 			?>
+				<div id="LoginStatus">התחבר באמצעות פייסבוק כדי להשתתף</div>
 				<a href="#" onclick="login();return false;">
-					<img src="http://static.ak.fbcdn.net/rsrc.php/zB6N8/hash/4li2k73z.gif" border="0">
+					<img src="images/fb_connect_heb.png" border="0">
 				</a>
 			<?php 
 			} 
@@ -142,29 +142,13 @@ if ($me && isset($_REQUEST['loginsucc'])){
 			<?php
 			if ($me) { 
 				$login->doLogin($me);
-				#$cookie = get_facebook_cookie($fbAppId, $fbSecret);
-				#$user = json_decode(file_get_contents('https://graph.facebook.com/me?access_token=' . $cookie['access_token']));
-				#echo "Your email is " . $user->email;
+
 
 			?>
-			<img align="center" src="https://graph.facebook.com/<?php echo $uid; ?>/picture">
 			<?php
 			} else {
 				$login->doLogout();
 			}
 			?>
-		</span>
 		</div>
-<?php
-	if (preg_match("/MSIE/i", $_SERVER['HTTP_USER_AGENT'])) {
-?>
-<br>
-		<div id="message">
-		<p>
-		מצטערים, נכון לעכשיו האתר לא פועל כשורה בדפדפן בו אתה משתמש (Internet Explorer). מומלץ להשתמש ב-<a href=http://mozilla.org.il/firefox/> Firefox</a> או<a href=http://www.google.com/chrome/> Chrome</a>.
-		</p>
 		</div>
-<br>		
-<?php		
-	}	
-?>	

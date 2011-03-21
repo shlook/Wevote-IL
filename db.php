@@ -1,9 +1,9 @@
 <?php
 include("db.class.php");
-$password = "********";
-$user = "********";
+$password = "***********";
+$user = "******";
 $server = "localhost";
-$dbName = "********";
+$dbName = "*******";
 
 $db = new DB($dbName, $server, $user, $password);
 ?>

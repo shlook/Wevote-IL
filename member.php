@@ -1,13 +1,13 @@
 <?
 
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
-include("vote/vote.class.php");
+include_once("vote/vote.class.php");
 $p_member_id = gp("mi");
 include_once("member.class.php");
 $memberPage = new Member ($p_member_id);
 $TITLE_STR = "דף חבר - " . $memberPage->name;
-include("header.php");
+include_once("header.php");
 
 $isSetAsMovil = gp("setmovil",1, true);
 $isChooseAsMovil = gp("choosemovil", 1, true);
@@ -56,8 +56,12 @@ if (!($p_member_id)) {
 		$me = new Member($_SESSION['member_id']);
 	}
 	?>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-<SCRIPT LANGUAGE="JavaScript" SRC="http://www.appelsiini.net/download/jquery.jeditable.js"></SCRIPT>
+<script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+<script language="JavaScript"> $("#moviloperation").tooltip({	effect: "fade",	opacity: 0.8}); </script>
+	
+
+	
+<SCRIPT LANGUAGE="JavaScript" SRC="js/jquery.jeditable.js"></SCRIPT>
 <SCRIPT LANGUAGE="JavaScript">
  $(document).ready(function() {
      $('.edit').editable('http://www.example.com/save.php', {
@@ -98,14 +102,14 @@ if (!($p_member_id)) {
 			
 					<?
 	if ($member->isMovil) {
-		echo "<div id='MemberStatus'> מוביל דעה </div>";
+		echo "<div id='MemberStatus'> מוביל דעה </div> ";
 		#echo "<h2> אפשרויות </h2>";
 		if ($isMyPage) {
 		?>
 		    <div id="MemberOption">
 			<form id="frmForMember<?=++$i?>" action="member.php?mi=<?=$me->id?>" method="post">
 				<input type="hidden" name="setmovil" value="2">
-				<a href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img  ALIGN=right src="images/remove.png"> בטל עצמך כמוביל דעה </a>
+				<a id="moviloperation" title="לאחר שתבטל עצמך כמוביל דעה, משתמשים לא יוכלו למנות אותך בתור מוביל דעה, ולא תוכל עוד להשתמש בקולותיהם של אלו אשר מינו אותך כמוביל הדעה שלהם." href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img  ALIGN=right src="images/remove.png"> בטל עצמך כמוביל דעה </a>
 			</form>
 			</div>
 		<?php
@@ -117,7 +121,7 @@ if (!($p_member_id)) {
 					<div id="MemberOption">
 								<form id="frmForMember<?=++$i?>" action="member.php?mi=<?=$member->id?>" method="post">
 									<input type="hidden" name="choosemovil" value="2">
-									<a href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/remove.png"> בטל כמוביל הדעה שלך </a>
+									<a id="moviloperation" title="לאחר ביטול מינוי מוביל דעה, מוביל הדעה לא יוכל עוד להשתמש בקולך. כמו כן, קולך ייגרע מהצבעות פתוחות בהן הוא הצביע עבורך." href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/remove.png"> בטל כמוביל הדעה שלך </a>
 								</form>
 								</div>
 					<?php
@@ -126,11 +130,16 @@ if (!($p_member_id)) {
 				<div id="MemberOption">
 								<form id="frmForMember<?=++$i?>" action="member.php?mi=<?=$member->id?>" method="post">
 									<input type="hidden" name="choosemovil" value="1">
-									<a href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/applications.png"> קבע כמוביל הדעה השלך </a>
+									<a id="moviloperation" title="כשאתה קובע מישהו כמוביל דעה, אתה מאפשר לו להשתמש בקול שלך בהצבעות בהן הוא משתתף. יש לך זכות לקחת את הקול שלך בחזרה עבור הצבעה מסוימת ולהצביע בה כפי שתבחר, וכמובן, תוכל לבטל את המינוי שלו כמוביל דעה מתי שתבחר. בגרסה הנוכחית לא תוכל לקבוע עצמך כמוביל דעה כל עוד מינית מוביל דעה עבורך." href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right  src="images/applications.png"> קבע כמוביל הדעה השלך </a>
+										
 								</form>
-								</div>
+				</div>
 				<?php
 				}
+			} elseif (($login->isLogged()) and ($me->isMovil)) {
+			?>
+				<div id='voteOptionStatus'> בגרסה הנוכחית לא תוכל למנות עבורך מוביל דעה כל עוד הגדרת עצמך כמוביל דעה </div>
+			<?
 			}
 			
 		}		
@@ -143,7 +152,7 @@ if (!($p_member_id)) {
 		<div id="MemberOption">
 			<form id="frmForMember<?=++$i?>" action="member.php?mi=<?=$member->id?>" method="post">
 				<input type="hidden" name="choosemovil" value="2">
-				<a href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/remove.png"> בטל כמוביל הדעה שלך </a>
+				<a id="moviloperation" title="לאחר ביטול מינוי מוביל דעה, מוביל הדעה לא יוכל עוד להשתמש בקולך. כמו כן, קולך ייגרע מהצבעות פתוחות בהן הוא הצביע עבורך." href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/remove.png"> בטל כמוביל הדעה שלך </a>
 			</form>
 			</div>
 		
@@ -156,7 +165,7 @@ if (!($p_member_id)) {
 		<div id="MemberOption">
 			<form id="frmForMember<?=++$i?>" action="member.php?mi=<?=$me->id?>" method="post">
 				<input type="hidden" name="setmovil" value="1">
-				<a href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/applications.png"> קבע עצמך כמוביל דעה </a>
+				<a id="moviloperation" title="מרגע שתקבע עצמך כמוביל דעה, חברי מפלגה אחרים יוכלו למנות אותך למוביל הדעה שלהם דרך עמוד המשתמש שלך. כמוביל דעה, בכל פעם שתצביע, יתווספו לקול שלך קולותיהם של כל מי שבחרו בך כמוביל דעה. בגרסה הנוכחית, כל עוד אתה מוגדר כמוביל דעה, לא תוכל למנות מוביל דעה עבורך. " href="javascript:makePost('frmForMember<?=$i?>')" class="setMovil"><img ALIGN=right src="images/applications.png"> קבע עצמך כמוביל דעה </a>
 			</form>
 			</div>
 		<?php
@@ -249,6 +258,7 @@ foreach ($timeline as $key => $val) {
 ?>
 </div>
 
+<script language="JavaScript"> $("#moviloperation").tooltip({	effect: "fade",	opacity: 0.8}); </script>
 
 <hr>
 

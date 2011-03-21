@@ -1,11 +1,11 @@
 <? 
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
 
 $ONLOAD_STR = "";
 $TITLE_STR = "הצבעות";
-include("header.php");
-include("vote/vote.class.php");
+include_once("header.php");
+include_once("vote/vote.class.php");
 ?>
 <h2>הצבעות פתוחות</h2>
 
@@ -29,6 +29,9 @@ foreach (Vote::getAllOpenVotes() as $vote)
 
 	<br>
 	<?
+}
+if (!(Vote::getAllOpenVotes())) {
+	print "אין הצבעות פתוחות";
 }
 	?>
 	

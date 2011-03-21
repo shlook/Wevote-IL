@@ -1,7 +1,7 @@
 <?
-include("utils.php");
+include_once("utils.php");
 include_once("db.php");
-include("vote/vote.class.php");
+include_once("vote/vote.class.php");
 addJsTag("js/vote.js");
 
 
@@ -10,7 +10,7 @@ $p_option_id = gp("oi",1, true);
 $p_is_cancel = gp ("cancel", 1, true);
 $vote = new Vote($p_vote_id);
 $TITLE_STR = "הצבעה - ".$vote->subject;
-include("header.php");
+include_once("header.php");
 
 if ($me) {
 	$memberId = $_SESSION['member_id'];
@@ -217,14 +217,14 @@ echo "<br><br><br><br><br>";
 							$count2 =  $line2->count;
 							?>
 							<div class="countBallot"><a class="ballotMembersCount" href="javascript:showMembers(<?=$line->vote_option_id?>)"><?=$count2?> חברים</a>
-							<div id="members_<?=$line->vote_option_id?>" style="z-index:100;border:1px solid black;background:white;position:absolute;display:none"><div style="position:relative;">
+							<div id="members_<?=$line->vote_option_id?>" style="z-index:100;border:1px solid black;background:white;position:absolute;display:none"><div>
 							<?php
 								$votedByMembersQuery = "select m.member_id member_id, m.name name, m.fb_uid fb_uid, vb.movil_id movil_id from member m, vote_ballot vb
 								          where m.member_id = vb.member_id and vb.vote_id = " . $p_vote_id . 
 										  " and vb.vote_option_id = " . $line->vote_option_id;
 								$votedByMembersResult = $db->query($votedByMembersQuery);
 							?>
-							<TABLE >
+							<TABLE id="vote_table">
 							<?php
 							while ($votedByMembersRow = $db->fetchNextObject($votedByMembersResult)) {
 							?>

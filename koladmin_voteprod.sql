@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `about_me` text NOT NULL,
   `is_admin` tinyint(1) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`member_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
